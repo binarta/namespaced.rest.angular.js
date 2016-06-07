@@ -3,7 +3,7 @@ describe('namespaced.rest', function () {
 
     describe('on module load', function() {
         it('then a default header mapper should be installed', inject(function(installRestDefaultHeaderMapper) {
-            expect(installRestDefaultHeaderMapper.calls[0].args[0]).toBeDefined();
+            expect(installRestDefaultHeaderMapper.calls.first().args[0]).toBeDefined();
         }));
 
         describe('given a configured namespace', function() {
@@ -12,7 +12,7 @@ describe('namespaced.rest', function () {
             beforeEach(inject(function(installRestDefaultHeaderMapper, config) {
                 headers = {};
                 config.namespace = 'active-namespace';
-                returnedHeaders = installRestDefaultHeaderMapper.calls[0].args[0](headers);
+                returnedHeaders = installRestDefaultHeaderMapper.calls.first().args[0](headers);
             }));
 
             it('then namespace header should be installed', inject(function(config) {

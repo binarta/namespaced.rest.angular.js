@@ -1,0 +1,5 @@
+{
+  "default": {
+    "namespaced.rest":"bower_components/binarta.namespaced.rest.angular/src/namespaced.rest.js"
+  }
+}
